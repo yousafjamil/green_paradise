@@ -7,6 +7,8 @@ import { getDictionary } from "@/lib/dictionary";
 import { pageMeta } from "@/lib/seo";
 import { photo } from "@/lib/media";
 import { btn, container } from "@/lib/ui";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbLd } from "@/lib/jsonld";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
@@ -29,6 +31,7 @@ export default async function About({ params }: PageProps<"/[lang]/about">) {
   const side = photo("olive-tree-villa-garden");
   return (
     <>
+      <JsonLd data={breadcrumbLd(lang, [{ name: t.nav.home, path: "" }, { name: t.nav.about, path: "/about" }])} />
       <PageHero title={a.title} lead={a.lead} image="white-bougainvillea-tree-villa" />
       <section className={`${container} grid grid-cols-1 gap-12 py-20 sm:py-24 lg:grid-cols-[1.2fr_1fr] lg:gap-16`}>
         <Reveal className="space-y-5 text-lg leading-relaxed text-ink-soft">

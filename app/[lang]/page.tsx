@@ -17,6 +17,8 @@ import VideoGrid from "@/components/VideoGrid";
 import CtaBand from "@/components/CtaBand";
 import Marquee from "@/components/Marquee";
 import Faq from "@/components/Faq";
+import JsonLd from "@/components/JsonLd";
+import { websiteLd } from "@/lib/jsonld";
 import ImageReveal from "@/components/ImageReveal";
 import ContactForm from "@/components/ContactForm";
 import ContactInfo from "@/components/ContactInfo";
@@ -37,7 +39,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd).replace(/</g, "\\u003c") }} />
+      <JsonLd data={[faqLd, websiteLd(lang, t.meta.siteTitle)]} />
       <Hero lang={lang} t={t} poster={{ src: poster.poster }} desktopVideo={video("video-01").src} mobileVideo={video("video-04").src} />
 
       <Marquee items={[...services.map((s) => s[lang].title), ...t.marquee]} />

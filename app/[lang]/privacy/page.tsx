@@ -15,5 +15,5 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/privacy">)
 export default async function Page({ params }: PageProps<"/[lang]/privacy">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
-  return <LegalPage doc={privacy[lang]} t={getDictionary(lang)} lang={lang} />;
+  return <LegalPage doc={privacy[lang]} t={getDictionary(lang)} lang={lang} path="/privacy" />;
 }

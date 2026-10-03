@@ -15,5 +15,5 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/terms">): 
 export default async function Page({ params }: PageProps<"/[lang]/terms">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
-  return <LegalPage doc={terms[lang]} t={getDictionary(lang)} lang={lang} />;
+  return <LegalPage doc={terms[lang]} t={getDictionary(lang)} lang={lang} path="/terms" />;
 }

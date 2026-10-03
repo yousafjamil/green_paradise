@@ -9,6 +9,9 @@ import { photo } from "@/lib/media";
 import { altFor } from "@/lib/alt";
 import { btn, container } from "@/lib/ui";
 import { whatsappUrl } from "@/lib/site";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbLd } from "@/lib/jsonld";
+import { galleryLd } from "@/lib/jsonld";
 import PageHero from "@/components/PageHero";
 import Gallery from "@/components/Gallery";
 import Reveal from "@/components/Reveal";
@@ -37,6 +40,7 @@ export default async function ProjectPage({ params }: PageProps<"/[lang]/project
 
   return (
     <>
+      <JsonLd data={[breadcrumbLd(lang, [{ name: t.nav.home, path: "" }, { name: t.nav.projects, path: "/projects" }, { name: c.title, path: `/projects/${slug}` }]), galleryLd(lang, { slug, name: c.title, description: c.summary, images: items.map((i) => ({ src: i.src, name: i.alt })) })]} />
       <PageHero title={c.title} lead={c.summary} image={p.cover} eyebrow={t.projects.categories[p.category]} />
       <section className={`${container} py-16 sm:py-20`}>
         <Reveal className="mb-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-ink-soft">

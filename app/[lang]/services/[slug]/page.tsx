@@ -9,6 +9,9 @@ import { serviceBySlug, services } from "@/data/services";
 import { photo } from "@/lib/media";
 import { btn, container } from "@/lib/ui";
 import { whatsappUrl } from "@/lib/site";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbLd } from "@/lib/jsonld";
+import { serviceLd } from "@/lib/jsonld";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
@@ -39,6 +42,7 @@ export default async function ServicePage({ params }: PageProps<"/[lang]/service
 
   return (
     <>
+      <JsonLd data={[breadcrumbLd(lang, [{ name: t.nav.home, path: "" }, { name: t.nav.services, path: "/services" }, { name: c.title, path: `/services/${slug}` }]), serviceLd(lang, { slug, name: c.title, description: c.intro, points: c.points })]} />
       <PageHero title={c.title} lead={c.summary} image={heroImg} eyebrow={t.nav.services} />
       <section className={`${container} grid grid-cols-1 gap-12 py-20 sm:py-24 lg:grid-cols-[1.3fr_1fr] lg:gap-16`}>
         <Reveal>

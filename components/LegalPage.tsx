@@ -3,11 +3,14 @@ import type { Locale } from "@/lib/i18n";
 import { LEGAL_UPDATED, type LegalDoc } from "@/data/legal";
 import { mailUrl, site, telUrl } from "@/lib/site";
 import { container } from "@/lib/ui";
+import JsonLd from "./JsonLd";
+import { breadcrumbLd } from "@/lib/jsonld";
 
-export default function LegalPage({ doc, t, lang }: { doc: LegalDoc; t: Dict; lang: Locale }) {
+export default function LegalPage({ doc, t, lang, path }: { doc: LegalDoc; t: Dict; lang: Locale; path: string }) {
   const date = new Intl.DateTimeFormat(lang === "ar" ? "ar-AE" : "en-GB", { dateStyle: "long", timeZone: "UTC" }).format(new Date(LEGAL_UPDATED));
   return (
     <>
+      <JsonLd data={breadcrumbLd(lang, [{ name: t.nav.home, path: "" }, { name: doc.title, path }])} />
       <section className="border-b border-line bg-white">
         <div className={`${container} max-w-4xl py-14 sm:py-20`}>
           <h1 className="text-4xl font-semibold sm:text-5xl">{doc.title}</h1>

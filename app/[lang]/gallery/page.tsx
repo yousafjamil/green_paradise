@@ -8,6 +8,8 @@ import { altFor } from "@/lib/alt";
 import { galleryVideos } from "@/data/videos";
 import { container } from "@/lib/ui";
 import Gallery from "@/components/Gallery";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbLd } from "@/lib/jsonld";
 import PageHero from "@/components/PageHero";
 import CtaBand from "@/components/CtaBand";
 
@@ -28,6 +30,7 @@ export default async function GalleryPage({ params }: PageProps<"/[lang]/gallery
   const items = order.flatMap((c) => allPhotos.filter((p) => p.category === c)).map((p, i) => ({ ...p, alt: altFor(p, lang, t, i) }));
   return (
     <>
+      <JsonLd data={breadcrumbLd(lang, [{ name: t.nav.home, path: "" }, { name: t.nav.gallery, path: "/gallery" }])} />
       <PageHero title={t.gallery.title} lead={t.gallery.text} image="villa-lawn-garden" />
       <section className={`${container} py-16 sm:py-20`}>
         <Gallery items={items} videos={galleryVideos(lang)} categories={order.map((id) => ({ id, label: cats[id] }))} labels={{ ...t.gallery, play: t.video.play }} rtl={lang === "ar"} />

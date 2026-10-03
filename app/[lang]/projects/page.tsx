@@ -5,6 +5,8 @@ import { getDictionary } from "@/lib/dictionary";
 import { pageMeta } from "@/lib/seo";
 import { projects } from "@/data/projects";
 import { container } from "@/lib/ui";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbLd } from "@/lib/jsonld";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import ProjectCard from "@/components/ProjectCard";
@@ -23,6 +25,7 @@ export default async function Projects({ params }: PageProps<"/[lang]/projects">
   const t = getDictionary(lang);
   return (
     <>
+      <JsonLd data={breadcrumbLd(lang, [{ name: t.nav.home, path: "" }, { name: t.nav.projects, path: "/projects" }])} />
       <PageHero title={t.projectsPage.title} lead={t.projectsPage.lead} image="sea-view-lawn-sprinklers" />
       <section className={`${container} py-20 sm:py-24`}>
         <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

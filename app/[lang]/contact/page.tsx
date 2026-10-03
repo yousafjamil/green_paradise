@@ -5,6 +5,8 @@ import { getDictionary } from "@/lib/dictionary";
 import { pageMeta } from "@/lib/seo";
 import { services } from "@/data/services";
 import { container } from "@/lib/ui";
+import JsonLd from "@/components/JsonLd";
+import { breadcrumbLd } from "@/lib/jsonld";
 import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
 import ContactInfo from "@/components/ContactInfo";
@@ -23,6 +25,7 @@ export default async function Contact({ params }: PageProps<"/[lang]/contact">) 
   const t = getDictionary(lang);
   return (
     <>
+      <JsonLd data={breadcrumbLd(lang, [{ name: t.nav.home, path: "" }, { name: t.nav.contact, path: "/contact" }])} />
       <PageHero title={t.contact.title} lead={t.contact.text} image="lawn-garden-tree" eyebrow={t.contact.eyebrow} />
       <section className={`${container} grid grid-cols-1 gap-12 py-16 sm:py-20 lg:grid-cols-[1fr_1.2fr] lg:gap-16`}>
         <ContactInfo t={t} />
