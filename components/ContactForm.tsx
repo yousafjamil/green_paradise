@@ -5,6 +5,7 @@ import type { Locale } from "@/lib/i18n";
 import { whatsappUrl } from "@/lib/site";
 import { track } from "@/lib/track";
 import { btn } from "@/lib/ui";
+import Link from "next/link";
 import { Check, WhatsApp } from "./icons";
 
 const field = "w-full rounded-xl border border-line bg-white px-4 py-3 text-base outline-none transition focus:border-forest focus:ring-2 focus:ring-leaf/30";
@@ -94,6 +95,7 @@ export default function ContactForm({ t, lang, services }: { t: Dict; lang: Loca
         <button type="submit" disabled={status === "sending"} className={`${btn.primary} disabled:opacity-60`}>{status === "sending" ? f.sending : t.cta.send}</button>
         <p className="text-sm text-ink-soft">{f.note}</p>
       </div>
+      <p className="text-xs text-ink-soft">{f.consent} <Link href={`/${lang}/privacy`} className="font-semibold text-forest underline underline-offset-2">{t.footer.privacy}</Link>.</p>
     </form>
   );
 }

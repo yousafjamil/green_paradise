@@ -34,6 +34,13 @@ export default function Assistant({ lang, t, serviceTitles }: { lang: Locale; t:
 
   useEffect(() => () => { if (timer.current) clearTimeout(timer.current); }, []);
   useEffect(() => { bottom.current?.scrollIntoView({ block: "end", behavior: "smooth" }); }, [msgs, typing, open]);
+  // A link ending in #chat opens the panel straight away (handy for sharing and demos).
+  useEffect(() => {
+    if (window.location.hash !== "#chat") return;
+    const raf = requestAnimationFrame(() => setOpen(true));
+    return () => cancelAnimationFrame(raf);
+  }, []);
+
   const wasOpen = useRef(false);
   // Move focus into the panel on open, and back to the launcher once it has re-appeared on close.
   useEffect(() => {

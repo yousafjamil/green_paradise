@@ -42,7 +42,10 @@ export default function Footer({ lang, t }: { lang: Locale; t: Dict }) {
       <div className="border-t border-white/10">
         <div className={`${container} flex flex-col gap-1 py-5 text-sm text-white/50 sm:flex-row sm:justify-between`}>
           <span>© {new Date().getFullYear()} {lang === "ar" ? "جرين برادايس لتنسيق وصيانة الحدائق ذ.م.م" : site.legalName}. {t.footer.rights}</span>
-          <span>Abu Dhabi, UAE</span>
+          <span className="flex gap-5">
+            <Link href={`/${lang}/privacy`} className="transition-colors hover:text-white">{t.footer.privacy}</Link>
+            <Link href={`/${lang}/terms`} className="transition-colors hover:text-white">{t.footer.terms}</Link>
+          </span>
         </div>
       </div>
     </footer>
