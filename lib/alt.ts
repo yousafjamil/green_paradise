@@ -1,13 +1,12 @@
 import type { Photo } from "./media";
 import type { Locale } from "./i18n";
 import type { Dict } from "./dictionary";
+import { photoAlts } from "@/data/alts";
 
-/** Readable alt text from the photo id (English) or its gallery category (Arabic). */
+/** What the photo actually shows, in the visitor's language. Falls back to a readable label. */
 export function altFor(p: Photo, lang: Locale, t: Dict, index = 0): string {
-  if (lang === "en") {
-    const words = p.id.replace(/-/g, " ");
-    return `${words.charAt(0).toUpperCase()}${words.slice(1)} – Green Paradise`;
-  }
-  const cat = (t.gallery.categories as Record<string, string>)[p.category] ?? "";
-  return `${cat} – جرين برادايس ${index + 1}`;
+  const known = photoAlts[p.id]?.[lang];
+  if (known) return known;
+  if (lang === "en") { const w = p.id.replace(/-/g, " "); return `${w.charAt(0).toUpperCase()}${w.slice(1)}`; }
+  return `${(t.gallery.categories as Record<string, string>)[p.category] ?? ""} ${index + 1}`.trim();
 }

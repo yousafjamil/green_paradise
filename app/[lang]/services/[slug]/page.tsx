@@ -7,6 +7,7 @@ import { getDictionary } from "@/lib/dictionary";
 import { pageMeta } from "@/lib/seo";
 import { serviceBySlug, services } from "@/data/services";
 import { photo } from "@/lib/media";
+import { altFor } from "@/lib/alt";
 import { btn, container } from "@/lib/ui";
 import { whatsappUrl } from "@/lib/site";
 import JsonLd from "@/components/JsonLd";
@@ -73,7 +74,7 @@ export default async function ServicePage({ params }: PageProps<"/[lang]/service
                 const p = photo(id);
                 return (
                   <li key={id} className="relative aspect-[4/5] overflow-hidden rounded-xl bg-sand">
-                    <Image src={p.src} alt={`${c.title} – ${id.replace(/-/g, " ")}`} fill sizes="(min-width:768px) 33vw,50vw" placeholder="blur" blurDataURL={p.blur} className="object-cover" />
+                    <Image src={p.src} alt={altFor(p, lang, t)} fill sizes="(min-width:768px) 33vw,50vw" placeholder="blur" blurDataURL={p.blur} className="object-cover" />
                   </li>
                 );
               })}
