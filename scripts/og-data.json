@@ -1,0 +1,254 @@
+[
+ {
+  "file": "en-default",
+  "lang": "en",
+  "title": "Transform your outdoor space",
+  "sub": "Landscaping · Abu Dhabi",
+  "photo": "sea-view-lawn-sprinklers"
+ },
+ {
+  "file": "en-about",
+  "lang": "en",
+  "title": "About Green Paradise",
+  "sub": "A licensed Abu Dhabi landscaping and maintenance company.",
+  "photo": "white-bougainvillea-tree-villa"
+ },
+ {
+  "file": "en-services",
+  "lang": "en",
+  "title": "Our services",
+  "sub": "Landscaping, plants and garden care for villas and outdoor spaces in Abu Dhabi.",
+  "photo": "fresh-lawn-hedge"
+ },
+ {
+  "file": "en-projects",
+  "lang": "en",
+  "title": "Our projects",
+  "sub": "Gardens, lawns and planting. Each collection shows work of one kind.",
+  "photo": "villa-lawn-garden"
+ },
+ {
+  "file": "en-gallery",
+  "lang": "en",
+  "title": "Photos from our gardens and nursery",
+  "sub": "Lawns, planting, flowers and plants. Tap any photo to see it larger.",
+  "photo": "flower-border-lawn"
+ },
+ {
+  "file": "en-contact",
+  "lang": "en",
+  "title": "Tell us about your garden",
+  "sub": "Send us a message or reach us directly. We will get back to you as soon as we can.",
+  "photo": "turf-seating-bougainvillea"
+ },
+ {
+  "file": "en-service-landscape-design",
+  "lang": "en",
+  "title": "Landscape Design & Gardening",
+  "sub": "Services",
+  "photo": "lawn-villa-trees"
+ },
+ {
+  "file": "en-service-lawns-and-turf",
+  "lang": "en",
+  "title": "Natural Grass & Artificial Turf",
+  "sub": "Services",
+  "photo": "fresh-lawn-hedge"
+ },
+ {
+  "file": "en-service-plants-trees-flowers",
+  "lang": "en",
+  "title": "Plants, Trees & Flowers",
+  "sub": "Services",
+  "photo": "bougainvillea-tower"
+ },
+ {
+  "file": "en-service-garden-maintenance",
+  "lang": "en",
+  "title": "Garden Maintenance",
+  "sub": "Services",
+  "photo": "lawn-mower-maintenance"
+ },
+ {
+  "file": "en-service-irrigation",
+  "lang": "en",
+  "title": "Irrigation Systems",
+  "sub": "Services",
+  "photo": "lawn-sprinkler-hedge"
+ },
+ {
+  "file": "en-service-building-maintenance",
+  "lang": "en",
+  "title": "Building Maintenance",
+  "sub": "Services",
+  "photo": "lawn-garden-tree"
+ },
+ {
+  "file": "en-project-villa-lawns-and-hedge-gardens",
+  "lang": "en",
+  "title": "Villa Lawns & Hedge Gardens",
+  "sub": "Lawns & Gardens",
+  "photo": "sea-view-lawn-sprinklers"
+ },
+ {
+  "file": "en-project-modern-villa-entrance-garden",
+  "lang": "en",
+  "title": "Modern Villa Entrance Garden",
+  "sub": "Entrances & Planters",
+  "photo": "olive-tree-villa-garden"
+ },
+ {
+  "file": "en-project-family-gardens-and-lawns",
+  "lang": "en",
+  "title": "Family Gardens & Lawns",
+  "sub": "Lawns & Gardens",
+  "photo": "villa-lawn-corner"
+ },
+ {
+  "file": "en-project-artificial-turf-gardens",
+  "lang": "en",
+  "title": "Artificial Turf Gardens & Terraces",
+  "sub": "Artificial Turf",
+  "photo": "turf-patio-bougainvillea-pot"
+ },
+ {
+  "file": "en-project-entrance-and-courtyard-planters",
+  "lang": "en",
+  "title": "Entrance & Courtyard Planters",
+  "sub": "Entrances & Planters",
+  "photo": "palm-planter-entrance"
+ },
+ {
+  "file": "en-project-flower-beds-and-borders",
+  "lang": "en",
+  "title": "Flower Beds & Bougainvillea",
+  "sub": "Flowers",
+  "photo": "bougainvillea-wall"
+ },
+ {
+  "file": "ar-default",
+  "lang": "ar",
+  "title": "حوّل مساحتك الخارجية",
+  "sub": "تنسيق الحدائق · أبوظبي",
+  "photo": "sea-view-lawn-sprinklers"
+ },
+ {
+  "file": "ar-about",
+  "lang": "ar",
+  "title": "عن جرين برادايس",
+  "sub": "شركة مرخّصة لتنسيق الحدائق والصيانة في أبوظبي.",
+  "photo": "white-bougainvillea-tree-villa"
+ },
+ {
+  "file": "ar-services",
+  "lang": "ar",
+  "title": "خدماتنا",
+  "sub": "تنسيق حدائق ونباتات وصيانة للفلل والمساحات الخارجية في أبوظبي.",
+  "photo": "fresh-lawn-hedge"
+ },
+ {
+  "file": "ar-projects",
+  "lang": "ar",
+  "title": "مشاريعنا",
+  "sub": "حدائق ومسطحات وزراعة. تعرض كل مجموعة نوعاً واحداً من الأعمال.",
+  "photo": "villa-lawn-garden"
+ },
+ {
+  "file": "ar-gallery",
+  "lang": "ar",
+  "title": "صور من حدائقنا ومشتلنا",
+  "sub": "مسطحات وزراعة وزهور ونباتات. اضغط على أي صورة لعرضها أكبر.",
+  "photo": "flower-border-lawn"
+ },
+ {
+  "file": "ar-contact",
+  "lang": "ar",
+  "title": "أخبرنا عن حديقتك",
+  "sub": "أرسل لنا رسالة أو تواصل معنا مباشرة. سنرد عليك في أقرب وقت.",
+  "photo": "turf-seating-bougainvillea"
+ },
+ {
+  "file": "ar-service-landscape-design",
+  "lang": "ar",
+  "title": "تصميم وتنسيق الحدائق",
+  "sub": "الخدمات",
+  "photo": "lawn-villa-trees"
+ },
+ {
+  "file": "ar-service-lawns-and-turf",
+  "lang": "ar",
+  "title": "عشب طبيعي وعشب صناعي",
+  "sub": "الخدمات",
+  "photo": "fresh-lawn-hedge"
+ },
+ {
+  "file": "ar-service-plants-trees-flowers",
+  "lang": "ar",
+  "title": "نباتات وأشجار وزهور",
+  "sub": "الخدمات",
+  "photo": "bougainvillea-tower"
+ },
+ {
+  "file": "ar-service-garden-maintenance",
+  "lang": "ar",
+  "title": "صيانة الحدائق",
+  "sub": "الخدمات",
+  "photo": "lawn-mower-maintenance"
+ },
+ {
+  "file": "ar-service-irrigation",
+  "lang": "ar",
+  "title": "أنظمة الري",
+  "sub": "الخدمات",
+  "photo": "lawn-sprinkler-hedge"
+ },
+ {
+  "file": "ar-service-building-maintenance",
+  "lang": "ar",
+  "title": "صيانة المباني",
+  "sub": "الخدمات",
+  "photo": "lawn-garden-tree"
+ },
+ {
+  "file": "ar-project-villa-lawns-and-hedge-gardens",
+  "lang": "ar",
+  "title": "مسطحات خضراء وأسيجة للفلل",
+  "sub": "مسطحات وحدائق",
+  "photo": "sea-view-lawn-sprinklers"
+ },
+ {
+  "file": "ar-project-modern-villa-entrance-garden",
+  "lang": "ar",
+  "title": "حديقة مدخل فيلا عصرية",
+  "sub": "مداخل وأحواض",
+  "photo": "olive-tree-villa-garden"
+ },
+ {
+  "file": "ar-project-family-gardens-and-lawns",
+  "lang": "ar",
+  "title": "حدائق ومسطحات عائلية",
+  "sub": "مسطحات وحدائق",
+  "photo": "villa-lawn-corner"
+ },
+ {
+  "file": "ar-project-artificial-turf-gardens",
+  "lang": "ar",
+  "title": "حدائق وتراسات بالعشب الصناعي",
+  "sub": "عشب صناعي",
+  "photo": "turf-patio-bougainvillea-pot"
+ },
+ {
+  "file": "ar-project-entrance-and-courtyard-planters",
+  "lang": "ar",
+  "title": "أحواض نباتات للمداخل والأفنية",
+  "sub": "مداخل وأحواض",
+  "photo": "palm-planter-entrance"
+ },
+ {
+  "file": "ar-project-flower-beds-and-borders",
+  "lang": "ar",
+  "title": "أحواض زهور وجهنمية",
+  "sub": "زهور",
+  "photo": "bougainvillea-wall"
+ }
+]

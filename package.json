@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "build:og": "node --experimental-strip-types scripts/og-data.mts && python3 scripts/build-og.py"
   },
   "dependencies": {
     "framer-motion": "^14.0.0",

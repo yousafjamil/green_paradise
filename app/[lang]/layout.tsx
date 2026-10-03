@@ -51,7 +51,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
     url: `${site.url}/${lang}`,
     telephone: site.phone,
     email: site.email,
-    image: `${site.url}/media/photos/sea-view-lawn-sprinklers.jpg`,
+    image: `${site.url}/og/${lang}-default.jpg`,
     areaServed: { "@type": "City", name: "Abu Dhabi" },
     address: { "@type": "PostalAddress", addressLocality: "Abu Dhabi", addressCountry: "AE" },
     description: t.meta.siteDescription,

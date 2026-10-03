@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/services/[
   const { lang, slug } = await params;
   const s = serviceBySlug(slug);
   if (!hasLocale(lang) || !s) return {};
-  return pageMeta({ lang, path: `/services/${slug}`, title: s[lang].title, description: s[lang].summary, image: s.image ? photo(s.image).src : undefined });
+  return pageMeta({ lang, path: `/services/${slug}`, title: s[lang].title, description: s[lang].summary });
 }
 
 export default async function ServicePage({ params }: PageProps<"/[lang]/services/[slug]">) {
