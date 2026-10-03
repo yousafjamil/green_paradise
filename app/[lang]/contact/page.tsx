@@ -8,6 +8,7 @@ import { container } from "@/lib/ui";
 import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
 import ContactInfo from "@/components/ContactInfo";
+import LocationMap from "@/components/LocationMap";
 
 export async function generateMetadata({ params }: PageProps<"/[lang]/contact">): Promise<Metadata> {
   const { lang } = await params;
@@ -25,8 +26,9 @@ export default async function Contact({ params }: PageProps<"/[lang]/contact">) 
       <PageHero title={t.contact.title} lead={t.contact.text} image="lawn-garden-tree" eyebrow={t.contact.eyebrow} />
       <section className={`${container} grid grid-cols-1 gap-12 py-16 sm:py-20 lg:grid-cols-[1fr_1.2fr] lg:gap-16`}>
         <ContactInfo t={t} />
-        <ContactForm t={t} services={services.map((s) => ({ slug: s.slug, label: s[lang].title }))} />
+        <ContactForm t={t} lang={lang} services={services.map((s) => ({ slug: s.slug, label: s[lang].title }))} />
       </section>
+      <LocationMap lang={lang} t={t} />
     </>
   );
 }

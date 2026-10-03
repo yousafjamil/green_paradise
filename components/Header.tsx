@@ -57,7 +57,7 @@ export default function Header({ lang, t }: { lang: Locale; t: Dict }) {
               <Link key={k} href={`/${lang}${p}`} aria-current={isActive(p) ? "page" : undefined}
                 className={`relative px-3.5 py-2 text-[0.92rem] font-medium transition-colors hover:text-forest ${isActive(p) ? "text-forest" : "text-ink-soft"}`}>
                 {t.nav[k]}
-                {isActive(p) && <motion.span layoutId="nav-underline" aria-hidden transition={{ type: "spring", stiffness: 380, damping: 32 }} className="absolute inset-x-3.5 -bottom-0.5 h-0.5 rounded bg-leaf" />}
+                {isActive(p) && <motion.span layoutId="nav-underline" aria-hidden transition={{ type: "spring", stiffness: 380, damping: 32 }} className="absolute inset-x-3.5 -bottom-0.5 h-0.5 rounded bg-gold" />}
               </Link>
             ))}
           </nav>
@@ -75,7 +75,7 @@ export default function Header({ lang, t }: { lang: Locale; t: Dict }) {
 
       <AnimatePresence>
         {open && (
-          <motion.div id="mobile-menu" role="dialog" aria-modal="true" aria-label={t.nav.menu} className="fixed inset-0 z-50 flex flex-col bg-ink text-white lg:hidden"
+          <motion.div id="mobile-menu" role="dialog" aria-modal="true" aria-label={t.nav.menu} className="fixed inset-0 z-50 flex flex-col bg-ink bg-pattern text-white lg:hidden"
             initial={{ clipPath: "circle(0% at 90% 4%)" }} animate={{ clipPath: "circle(150% at 90% 4%)" }} exit={{ opacity: 0 }} transition={{ duration: 0.55, ease: [0.7, 0, 0.2, 1] }}>
             <div className={`${container} flex h-[4.25rem] items-center justify-between`}>
               <Logo lang={lang} light showSub={false} />
@@ -85,7 +85,7 @@ export default function Header({ lang, t }: { lang: Locale; t: Dict }) {
               {links.map(([p, k], i) => (
                 <motion.div key={k} initial={{ opacity: 0, x: lang === "ar" ? 24 : -24 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 + i * 0.06, duration: 0.5, ease: [0.2, 0.7, 0.2, 1] }}>
                   <Link href={`/${lang}${p}`} aria-current={isActive(p) ? "page" : undefined}
-                    className={`font-display block border-b border-white/10 py-4 text-3xl transition-colors hover:text-leaf ${isActive(p) ? "text-leaf" : "text-white"}`}>{t.nav[k]}</Link>
+                    className={`font-display block border-b border-white/10 py-4 text-3xl transition-colors hover:text-gold ${isActive(p) ? "text-gold" : "text-white"}`}>{t.nav[k]}</Link>
                 </motion.div>
               ))}
             </nav>

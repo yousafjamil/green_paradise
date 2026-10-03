@@ -2,6 +2,7 @@ const sheen = "relative overflow-hidden before:pointer-events-none before:absolu
 const base = "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-[0.95rem] font-semibold transition-all duration-200 focus-visible:outline-offset-4";
 export const btn = {
   primary: `${base} ${sheen} bg-forest text-white hover:bg-forest-deep hover:shadow-lg hover:shadow-forest/20`,
+  gold: `${base} ${sheen} bg-gold text-ink hover:bg-[#ffd75a] hover:shadow-lg hover:shadow-black/20`,
   light: `${base} ${sheen} bg-white text-forest-deep hover:bg-cream`,
   outline: `${base} border border-white/60 text-white hover:bg-white hover:text-forest-deep`,
   outlineDark: `${base} border border-forest/30 text-forest hover:bg-forest hover:text-white`,

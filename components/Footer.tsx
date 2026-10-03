@@ -10,7 +10,7 @@ import { Mail, Phone, Pin, WhatsApp } from "./icons";
 
 export default function Footer({ lang, t }: { lang: Locale; t: Dict }) {
   const nav = [["", t.nav.home], ["/about", t.nav.about], ["/services", t.nav.services], ["/projects", t.nav.projects], ["/gallery", t.nav.gallery], ["/contact", t.nav.contact]] as const;
-  const h = "mb-4 text-xs font-bold uppercase tracking-[0.18em] text-leaf";
+  const h = "mb-4 text-xs font-bold uppercase tracking-[0.18em] text-gold";
   const a = "text-white/75 transition-colors hover:text-white";
   return (
     <footer className="bg-ink text-white">

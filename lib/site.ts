@@ -10,6 +10,9 @@ export const site = {
   email: "mustaqimkhan.mkd367@gmail.com", // temporary, taken from the trade licence
   city: "Abu Dhabi",
   country: "AE",
+  // Set NEXT_PUBLIC_MAP_QUERY to the exact address (or "lat,lng") once confirmed; until then the map shows the city.
+  mapQuery: process.env.NEXT_PUBLIC_MAP_QUERY ?? "Abu Dhabi, United Arab Emirates",
+  mapZoom: process.env.NEXT_PUBLIC_MAP_QUERY ? 16 : 11,
 } as const;
 
 export const whatsappUrl = (text?: string) =>

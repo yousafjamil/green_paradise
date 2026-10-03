@@ -16,6 +16,7 @@ import ProjectCard from "@/components/ProjectCard";
 import VideoGrid from "@/components/VideoGrid";
 import CtaBand from "@/components/CtaBand";
 import Marquee from "@/components/Marquee";
+import Faq from "@/components/Faq";
 import ImageReveal from "@/components/ImageReveal";
 import ContactForm from "@/components/ContactForm";
 import ContactInfo from "@/components/ContactInfo";
@@ -28,8 +29,15 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
   const poster = video("video-01");
   const intro = photo("palm-lawn-bougainvillea-hedge");
 
+  const faqLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: t.faq.items.map((i) => ({ "@type": "Question", name: i.q, acceptedAnswer: { "@type": "Answer", text: i.a } })),
+  };
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd).replace(/</g, "\\u003c") }} />
       <Hero lang={lang} t={t} poster={{ src: poster.poster }} desktopVideo={video("video-01").src} mobileVideo={video("video-04").src} />
 
       <Marquee items={[...services.map((s) => s[lang].title), ...t.marquee]} />
@@ -84,7 +92,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
       </section>
 
       {/* Video */}
-      <section className="bg-ink py-20 text-white sm:py-28">
+      <section className="bg-forest-deep bg-pattern py-20 text-white sm:py-28">
         <div className={container}>
           <Reveal><SectionHeading light eyebrow={t.video.eyebrow} title={t.video.title} text={t.video.text} /></Reveal>
           <div className="mt-12">
@@ -99,13 +107,15 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
         <ul className="mt-12 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
           {t.why.items.map((it, i) => (
             <Reveal as="li" key={it.t} delay={(i % 3) * 90} className="border-t border-line pt-6">
-              <span className="font-display text-sm font-semibold text-leaf" dir="ltr">{String(i + 1).padStart(2, "0")}</span>
+              <span className="font-display text-sm font-semibold text-forest" dir="ltr">{String(i + 1).padStart(2, "0")}</span>
               <h3 className="mt-2 text-xl font-semibold">{it.t}</h3>
               <p className="mt-2 leading-relaxed text-ink-soft">{it.d}</p>
             </Reveal>
           ))}
         </ul>
       </section>
+
+      <Faq t={t} />
 
       <CtaBand lang={lang} t={t} />
 
@@ -115,7 +125,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
           <SectionHeading eyebrow={t.contact.eyebrow} title={t.contact.title} text={t.contact.text} />
           <div className="mt-8"><ContactInfo t={t} /></div>
         </Reveal>
-        <Reveal delay={120}><ContactForm t={t} services={services.map((s) => ({ slug: s.slug, label: s[lang].title }))} /></Reveal>
+        <Reveal delay={120}><ContactForm t={t} lang={lang} services={services.map((s) => ({ slug: s.slug, label: s[lang].title }))} /></Reveal>
       </section>
     </>
   );

@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Green Paradise"><rect width="100" height="100" rx="26" fill="#1F5B36"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Green Paradise"><rect width="100" height="100" rx="26" fill="#0A3D28"/>
 <path d="M27 80V47a23 23 0 0 1 46 0v33z" fill="#FFFFFF"/>
-<path d="M50 80V45" stroke="#5DAA45" stroke-width="4" stroke-linecap="round"/>
-<path d="M50 68c-10 0-15-7-15-14 8 0 15 5 15 14z" fill="#5DAA45"/>
-<path d="M50 57c10 0 15-7 15-14-8 0-15 5-15 14z" fill="#5DAA45"/></svg>
+<path d="M50 80V45" stroke="#4CAF87" stroke-width="4" stroke-linecap="round"/>
+<path d="M50 68c-10 0-15-7-15-14 8 0 15 5 15 14z" fill="#4CAF87"/>
+<path d="M50 57c10 0 15-7 15-14-8 0-15 5-15 14z" fill="#4CAF87"/></svg>

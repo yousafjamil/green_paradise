@@ -1,14 +1,15 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-forest: #1f5b36;
-  --color-forest-deep: #174428;
-  --color-leaf: #5daa45;
-  --color-ink: #16231b;
-  --color-ink-soft: #3b4a40;
-  --color-cream: #f6f4ee;
-  --color-sand: #e9e4d6;
-  --color-line: #dcd7c8;
+  --color-forest: #176b46;
+  --color-forest-deep: #0a3d28;
+  --color-leaf: #4caf87;
+  --color-gold: #fec92b;
+  --color-ink: #042718;
+  --color-ink-soft: #3f5a4c;
+  --color-cream: #fbf7f0;
+  --color-sand: #f0e9da;
+  --color-line: #e6dfd0;
   --animate-fade-up: fade-up 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 
@@ -45,3 +46,13 @@ html[dir="rtl"] { --font-display: var(--font-cairo); --font-body: var(--font-cai
 [dir="rtl"] .marquee-track { animation-name: marquee-rtl; }
 .marquee:hover .marquee-track { animation-play-state: paused; }
 @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
+
+/* Faint sprouts and sparkles on dark green sections */
+.bg-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150' viewBox='0 0 150 150' fill='none' stroke='white' stroke-opacity='.07' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M32 56V32m0 9c-8 0-11-5-11-11 7 0 11 3 11 11zm0-5c8 0 11-5 11-11-7 0-11 3-11 11z'/%3E%3Cpath d='M108 104l3.5 8 8 3.5-8 3.5-3.5 8-3.5-8-8-3.5 8-3.5z'/%3E%3C/svg%3E");
+  background-size: 150px 150px;
+}
+/* FAQ: smooth reveal for native <details> */
+details[open] > .faq-body { animation: fade-up .45s cubic-bezier(.2,.7,.2,1) both; }
+details > summary { list-style: none; }
+details > summary::-webkit-details-marker { display: none; }

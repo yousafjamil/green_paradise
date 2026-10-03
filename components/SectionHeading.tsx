@@ -5,7 +5,7 @@ export default function SectionHeading({ eyebrow, title, text, light = false, ce
   return (
     <div className={`max-w-2xl ${center ? "mx-auto text-center" : ""}`}>
       {eyebrow && (
-        <p className={`mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] ${center ? "justify-center" : ""} ${light ? "text-leaf" : "text-forest"}`}>
+        <p className={`mb-3 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] ${center ? "justify-center" : ""} ${light ? "text-gold" : "text-forest"}`}>
           <motion.span aria-hidden initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }} transition={{ duration: 0.8, ease: [0.2, 0.7, 0.2, 1] }} className="h-px w-8 origin-left bg-current rtl:origin-right" />{eyebrow}
         </p>
       )}

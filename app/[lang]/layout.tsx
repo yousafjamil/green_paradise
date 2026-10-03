@@ -12,6 +12,7 @@ import WhatsAppFloat from "@/components/WhatsAppFloat";
 import MotionProvider from "@/components/MotionProvider";
 import ScrollProgress from "@/components/ScrollProgress";
 import BackToTop from "@/components/BackToTop";
+import Analytics from "@/components/Analytics";
 
 const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-fraunces", display: "swap" });
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-jakarta", display: "swap" });
@@ -20,7 +21,7 @@ const cairo = Cairo({ subsets: ["arabic", "latin"], variable: "--font-cairo", di
 export const dynamicParams = false;
 export const generateStaticParams = () => locales.map((lang) => ({ lang }));
 
-export const viewport: Viewport = { themeColor: "#1f5b36", width: "device-width", initialScale: 1 };
+export const viewport: Viewport = { themeColor: "#0a3d28", width: "device-width", initialScale: 1 };
 
 export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Promise<Metadata> {
   const { lang } = await params;
@@ -51,6 +52,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
     areaServed: { "@type": "City", name: "Abu Dhabi" },
     address: { "@type": "PostalAddress", addressLocality: "Abu Dhabi", addressCountry: "AE" },
     description: t.meta.siteDescription,
+    hasMap: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(site.mapQuery)}`,
     knowsAbout: ["Landscaping", "Garden maintenance", "Artificial turf", "Irrigation", "Plants and trees"],
   };
 
@@ -65,6 +67,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
           <BackToTop label={t.nav.top} />
           <WhatsAppFloat label={t.cta.whatsapp} text={t.whatsappGreeting} />
         </MotionProvider>
+        <Analytics />
         {/* Animated content starts hidden; without JavaScript it must stay readable. */}
         <noscript><style>{'[style*="opacity:0"],[style*="opacity: 0"]{opacity:1!important;transform:none!important;clip-path:none!important}'}</style></noscript>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
