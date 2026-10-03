@@ -25,6 +25,7 @@ NEXT_PUBLIC_SITE_URL=https://your-domain.ae
 | Services (text, photos) | `data/services.ts` |
 | Projects (text, photos) | `data/projects.ts` |
 | Video captions | `data/videos.ts` |
+| Quick-help assistant questions/answers, FAQ | `lib/dictionary.ts` (`assistant.topics`, `faq.items`) |
 | Colours | `app/globals.css` (`@theme`) |
 
 ## Media
@@ -39,11 +40,20 @@ python3 scripts/build-media.py     # needs Pillow + ffmpeg
 Output goes to `public/media` and `data/media.generated.json`.
 Photos used in `data/projects.ts` appear in exactly one project.
 
+## Quick-help assistant
+
+The bottom-left "Quick help" panel answers a fixed set of common questions from
+`lib/dictionary.ts` and sends anything else to WhatsApp. It is rules-based (no AI),
+so it can only say what is written there. Edit or add topics in `assistant.topics`
+(EN and AR).
+
 ## Contact form
 
-"Send Inquiry" opens WhatsApp with the message pre-filled to the company
-number. No server or email service is required. To also receive email, add a
-route handler with a provider such as Resend or SMTP.
+"Send Inquiry" posts to `/api/contact`, which emails the company through Resend
+(set `RESEND_API_KEY`, see `.env.example`). Without a key it falls back to a
+prefilled WhatsApp message. Includes validation, a honeypot and a rate limit.
+
+Optional: `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` (analytics), `NEXT_PUBLIC_MAP_QUERY` (map pin).
 
 ## Open items (content needed from the client)
 

@@ -13,6 +13,8 @@ import MotionProvider from "@/components/MotionProvider";
 import ScrollProgress from "@/components/ScrollProgress";
 import BackToTop from "@/components/BackToTop";
 import Analytics from "@/components/Analytics";
+import Assistant from "@/components/Assistant";
+import { services } from "@/data/services";
 
 const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-fraunces", display: "swap" });
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-jakarta", display: "swap" });
@@ -64,6 +66,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
           <Header lang={lang} t={t} />
           <main id="main" className="flex-1">{children}</main>
           <Footer lang={lang} t={t} />
+          <Assistant lang={lang} t={t} serviceTitles={services.map((x) => x[lang].title)} />
           <BackToTop label={t.nav.top} />
           <WhatsAppFloat label={t.cta.whatsapp} text={t.whatsappGreeting} />
         </MotionProvider>
