@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Green Paradise – website
 
-## Getting Started
+Next.js (App Router) · TypeScript · Tailwind CSS · English (LTR) + Arabic (RTL)
 
-First, run the development server:
+## Run
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev          # http://localhost:3000  (redirects to /en or /ar)
+npm run build && npm start   # production
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Set the real domain before launch (used for canonical URLs, sitemap, Open Graph):
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+NEXT_PUBLIC_SITE_URL=https://your-domain.ae
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Where to change things
 
-## Learn More
+| What | File |
+|---|---|
+| Phone, WhatsApp, email, city | `lib/site.ts` |
+| All page text (EN + AR) | `lib/dictionary.ts` |
+| Services (text, photos) | `data/services.ts` |
+| Projects (text, photos) | `data/projects.ts` |
+| Video captions | `data/videos.ts` |
+| Colours | `app/globals.css` (`@theme`) |
 
-To learn more about Next.js, take a look at the following resources:
+## Media
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Original photos/videos live in `../organized`. To rebuild the web versions
+(resized, GPS/EXIF removed, videos compressed, duplicates skipped):
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+python3 scripts/build-media.py     # needs Pillow + ffmpeg
+```
 
-## Deploy on Vercel
+Output goes to `public/media` and `data/media.generated.json`.
+Photos used in `data/projects.ts` appear in exactly one project.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contact form
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+"Send Inquiry" opens WhatsApp with the message pre-filled to the company
+number. No server or email service is required. To also receive email, add a
+route handler with a provider such as Resend or SMTP.
+
+## Open items (content needed from the client)
+
+- Final domain, street address / Google Maps pin, working hours, social links
+- Real project names and locations
+- An "after" photo matching `before-bare-sandy-yard` to enable a Before/After slider
+- Confirm Arabic copy with a native reader
+- Replace the temporary email in `lib/site.ts`
