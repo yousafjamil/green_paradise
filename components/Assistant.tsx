@@ -96,7 +96,7 @@ export default function Assistant({ lang, t, serviceTitles }: { lang: Locale; t:
         {!open && (
           <motion.button ref={launcher} type="button" onClick={() => toggle(true)} aria-label={a.open} aria-haspopup="dialog"
             initial={{ opacity: 0, scale: 0.8, y: 12 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.8 }} whileHover={{ y: -3 }} whileTap={{ scale: 0.95 }} transition={{ delay: 0.6 }}
-            className="fixed bottom-5 start-5 z-30 flex h-14 items-center gap-2.5 rounded-full bg-forest-deep px-4 text-white shadow-lg shadow-black/25 ring-1 ring-white/10 sm:bottom-6 sm:start-6 sm:pe-5">
+            className="fixed bottom-[5.75rem] start-4 z-30 flex h-12 sm:bottom-6 sm:start-6 sm:h-14 items-center gap-2.5 rounded-full bg-forest-deep px-4 text-white shadow-lg shadow-black/25 ring-1 ring-white/10 sm:bottom-6 sm:start-6 sm:pe-5">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.8A8 8 0 1 1 21 12z" /><path d="M8.5 11.5h7M8.5 14.5h4" /></svg>
             <span className="hidden text-sm font-semibold sm:inline">{a.launcher}</span>
             <span aria-hidden className="absolute -top-0.5 -end-0.5 size-3.5 rounded-full border-2 border-cream bg-gold" />

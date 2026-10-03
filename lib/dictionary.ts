@@ -6,7 +6,7 @@ const en = {
     siteDescription: "Green Paradise designs, plants and maintains gardens, lawns and outdoor spaces across Abu Dhabi. Landscape design, natural grass and artificial turf, plants, irrigation and garden maintenance.",
   },
   nav: { home: "Home", about: "About", services: "Services", projects: "Projects", gallery: "Gallery", contact: "Contact", menu: "Menu", close: "Close", skip: "Skip to content", language: "Language", top: "Back to top" },
-  cta: { consult: "Get a Free Consultation", projects: "View Our Projects", whatsapp: "WhatsApp Us", call: "Call Now", request: "Request a Consultation", details: "View Details", about: "More About Us", all: "View All", allProjects: "All Projects", allServices: "All Services", send: "Send Inquiry" },
+  cta: { consult: "Get a Free Consultation", projects: "View Our Projects", whatsapp: "WhatsApp Us", call: "Call Now", quote: "Get a Quote", request: "Request a Consultation", details: "View Details", about: "More About Us", all: "View All", allProjects: "All Projects", allServices: "All Services", send: "Send Inquiry" },
   hero: {
     eyebrow: "Landscaping · Abu Dhabi",
     title: "Transform your outdoor space",
@@ -115,7 +115,7 @@ const ar: Dict = {
     siteDescription: "جرين برادايس تصمّم وتزرع وتصون الحدائق والمسطحات الخضراء والمساحات الخارجية في أبوظبي. تصميم حدائق، عشب طبيعي وصناعي، نباتات، ري وصيانة حدائق.",
   },
   nav: { home: "الرئيسية", about: "من نحن", services: "الخدمات", projects: "المشاريع", gallery: "المعرض", contact: "اتصل بنا", menu: "القائمة", close: "إغلاق", skip: "انتقل إلى المحتوى", language: "اللغة", top: "العودة للأعلى" },
-  cta: { consult: "احصل على استشارة مجانية", projects: "شاهد مشاريعنا", whatsapp: "واتساب", call: "اتصل الآن", request: "اطلب استشارة", details: "التفاصيل", about: "المزيد عنا", all: "عرض الكل", allProjects: "كل المشاريع", allServices: "كل الخدمات", send: "إرسال الطلب" },
+  cta: { consult: "احصل على استشارة مجانية", projects: "شاهد مشاريعنا", whatsapp: "واتساب", call: "اتصل الآن", quote: "اطلب سعراً", request: "اطلب استشارة", details: "التفاصيل", about: "المزيد عنا", all: "عرض الكل", allProjects: "كل المشاريع", allServices: "كل الخدمات", send: "إرسال الطلب" },
   hero: {
     eyebrow: "تنسيق الحدائق · أبوظبي",
     title: "حوّل مساحتك الخارجية",

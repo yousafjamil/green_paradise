@@ -14,6 +14,7 @@ import ScrollProgress from "@/components/ScrollProgress";
 import BackToTop from "@/components/BackToTop";
 import Analytics from "@/components/Analytics";
 import Assistant from "@/components/Assistant";
+import MobileActionBar from "@/components/MobileActionBar";
 import { services } from "@/data/services";
 
 const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-fraunces", display: "swap" });
@@ -60,7 +61,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
 
   return (
     <html lang={lang} dir={dirOf(lang)} className={`${fraunces.variable} ${jakarta.variable} ${cairo.variable}`}>
-      <body className="flex min-h-svh flex-col">
+      <body className="flex min-h-svh flex-col pb-[calc(4.25rem+env(safe-area-inset-bottom))] sm:pb-0">
         <MotionProvider>
           <ScrollProgress />
           <Header lang={lang} t={t} />
@@ -68,6 +69,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
           <Footer lang={lang} t={t} />
           <Assistant lang={lang} t={t} serviceTitles={services.map((x) => x[lang].title)} />
           <BackToTop label={t.nav.top} />
+          <MobileActionBar lang={lang} t={t} />
           <WhatsAppFloat label={t.cta.whatsapp} text={t.whatsappGreeting} />
         </MotionProvider>
         <Analytics />

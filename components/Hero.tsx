@@ -6,8 +6,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import type { Locale } from "@/lib/i18n";
 import type { Dict } from "@/lib/dictionary";
 import { btn, container } from "@/lib/ui";
-import { whatsappUrl } from "@/lib/site";
-import { Arrow, WhatsApp } from "./icons";
+import { Arrow } from "./icons";
 import Magnetic from "./Magnetic";
 
 type Props = { lang: Locale; t: Dict; poster: { src: string; blur?: string }; desktopVideo: string; mobileVideo: string };
@@ -47,7 +46,7 @@ export default function Hero({ lang, t, poster, desktopVideo, mobileVideo }: Pro
       </motion.div>
       <div aria-hidden className="absolute inset-0 -z-[5] bg-gradient-to-t from-ink/90 via-ink/55 to-ink/35" />
 
-      <motion.div style={{ y: textY, opacity: textOpacity }} className={`${container} pb-14 pt-32 sm:pb-20`}>
+      <motion.div style={{ y: textY, opacity: textOpacity }} className={`${container} pb-40 pt-32 sm:pb-20`}>
         <motion.p initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease, delay: 0.1 }}
           className="mb-5 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.22em] text-gold [text-shadow:0_1px_8px_rgb(0_0_0/0.45)]">
           <motion.span aria-hidden initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 0.8, delay: 0.3 }} className="h-px w-8 origin-left bg-current rtl:origin-right" />{t.hero.eyebrow}
@@ -61,7 +60,6 @@ export default function Hero({ lang, t, poster, desktopVideo, mobileVideo }: Pro
         <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease, delay: 0.85 }} className="mt-8 flex flex-col gap-3 sm:flex-row">
           <Magnetic className="max-sm:[&>*]:w-full"><Link href={`/${lang}/contact`} className={btn.gold}>{t.cta.consult}<Arrow /></Link></Magnetic>
           <Magnetic className="max-sm:[&>*]:w-full"><Link href={`/${lang}/projects`} className={btn.outline}>{t.cta.projects}</Link></Magnetic>
-          <a href={whatsappUrl(t.whatsappGreeting)} target="_blank" rel="noopener noreferrer" className={`${btn.whatsapp} sm:hidden`}><WhatsApp />{t.cta.whatsapp}</a>
         </motion.div>
       </motion.div>
 
