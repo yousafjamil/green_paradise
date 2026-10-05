@@ -5,12 +5,15 @@ const en = {
     siteTitle: "Green Paradise | Landscaping & Garden Maintenance in Abu Dhabi",
     siteDescription: "Green Paradise designs, plants and maintains gardens, lawns and outdoor spaces across Abu Dhabi. Landscape design, natural grass and artificial turf, plants, irrigation and garden maintenance.",
   },
-  nav: { home: "Home", about: "About", services: "Services", projects: "Projects", gallery: "Gallery", contact: "Contact", menu: "Menu", close: "Close", skip: "Skip to content", language: "Language", top: "Back to top" },
+  nav: { home: "Home", about: "About", services: "Services", projects: "Projects", gallery: "Gallery", contact: "Contact", menu: "Menu", close: "Close", skip: "Skip to content", language: "Language", top: "Back to top", quick: "Quick contact" },
   cta: { consult: "Get a Free Consultation", projects: "View Our Projects", whatsapp: "WhatsApp Us", call: "Call Now", quote: "Get a Quote", request: "Request a Consultation", details: "View Details", about: "More About Us", all: "View All", allProjects: "All Projects", allServices: "All Services", send: "Send Inquiry" },
   hero: {
     eyebrow: "Landscaping · Abu Dhabi",
     title: "Transform your outdoor space",
     text: "Landscaping, lawns, plants and garden care for villas and outdoor spaces across Abu Dhabi.",
+    trust: ["Licensed in Abu Dhabi", "Design, planting and upkeep", "Chat with us on WhatsApp"],
+    carousel: "Featured garden photos",
+    showPhoto: "Show photo",
   },
   intro: {
     eyebrow: "About Green Paradise",
@@ -114,12 +117,15 @@ const ar: Dict = {
     siteTitle: "جرين برادايس | تنسيق وصيانة الحدائق في أبوظبي",
     siteDescription: "جرين برادايس تصمّم وتزرع وتصون الحدائق والمسطحات الخضراء والمساحات الخارجية في أبوظبي. تصميم حدائق، عشب طبيعي وصناعي، نباتات، ري وصيانة حدائق.",
   },
-  nav: { home: "الرئيسية", about: "من نحن", services: "الخدمات", projects: "المشاريع", gallery: "المعرض", contact: "اتصل بنا", menu: "القائمة", close: "إغلاق", skip: "انتقل إلى المحتوى", language: "اللغة", top: "العودة للأعلى" },
+  nav: { home: "الرئيسية", about: "من نحن", services: "الخدمات", projects: "المشاريع", gallery: "المعرض", contact: "اتصل بنا", menu: "القائمة", close: "إغلاق", skip: "انتقل إلى المحتوى", language: "اللغة", top: "العودة للأعلى", quick: "تواصل سريع" },
   cta: { consult: "احصل على استشارة مجانية", projects: "شاهد مشاريعنا", whatsapp: "واتساب", call: "اتصل الآن", quote: "اطلب سعراً", request: "اطلب استشارة", details: "التفاصيل", about: "المزيد عنا", all: "عرض الكل", allProjects: "كل المشاريع", allServices: "كل الخدمات", send: "إرسال الطلب" },
   hero: {
     eyebrow: "تنسيق الحدائق · أبوظبي",
     title: "حوّل مساحتك الخارجية",
     text: "تنسيق حدائق ومسطحات خضراء ونباتات وصيانة للفلل والمساحات الخارجية في أبوظبي.",
+    trust: ["مرخّصة في أبوظبي", "تصميم وزراعة وصيانة", "تواصل معنا عبر واتساب"],
+    carousel: "صور مختارة من حدائقنا",
+    showPhoto: "عرض الصورة",
   },
   intro: {
     eyebrow: "عن جرين برادايس",

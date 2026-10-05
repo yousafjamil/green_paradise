@@ -7,12 +7,14 @@ export const site = {
   phone: "+971547854908",
   phoneDisplay: "+971 54 785 4908",
   whatsapp: "971547854908",
-  email: "mustaqimkhan.mkd367@gmail.com", // temporary, taken from the trade licence
+  email: "aqibjaveed46356@gmail.com", // contact email shown on the site and used for form delivery
   city: "Abu Dhabi",
   country: "AE",
   // Set NEXT_PUBLIC_MAP_QUERY to the exact address (or "lat,lng") once confirmed; until then the map shows the city.
   mapQuery: process.env.NEXT_PUBLIC_MAP_QUERY ?? "Abu Dhabi, United Arab Emirates",
   mapZoom: process.env.NEXT_PUBLIC_MAP_QUERY ? 16 : 11,
+  // Home hero style: "slider" = full-width photos that change by themselves, "arches" = 3D arch photo stack.
+  heroStyle: "slider" as "slider" | "arches",
 } as const;
 
 export const whatsappUrl = (text?: string) =>

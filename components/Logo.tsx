@@ -18,14 +18,14 @@ export function LogoMark({ light = false, className = "size-10" }: { light?: boo
 export default function Logo({ lang, light = false, showSub = true }: { lang: Locale; light?: boolean; showSub?: boolean }) {
   const ar = lang === "ar";
   return (
-    <span className="flex items-center gap-3" aria-label="Green Paradise">
+    <span className="flex items-center gap-3">
       <LogoMark light={light} className="size-10 shrink-0 sm:size-11" />
       <span className="flex flex-col leading-none">
         <span className={`text-[1.05rem] font-extrabold tracking-[0.06em] sm:text-[1.2rem] ${light ? "text-white" : "text-ink"} ${ar ? "tracking-normal" : ""}`}>
           {ar ? (<>جرين <span className={`font-medium ${light ? "text-gold" : "text-forest"}`}>برادايس</span></>) : (<>GREEN <span className={`font-medium ${light ? "text-gold" : "text-forest"}`}>PARADISE</span></>)}
         </span>
         {showSub && (
-          <span className={`mt-1.5 hidden text-[0.6rem] font-semibold sm:block ${ar ? "tracking-normal text-[0.7rem]" : "tracking-[0.3em]"} ${light ? "text-[#cfe5c4]" : "text-forest/80"}`}>
+          <span className={`mt-1.5 hidden text-[0.6rem] font-semibold sm:block ${ar ? "tracking-normal text-[0.7rem]" : "tracking-[0.3em]"} ${light ? "text-[#cfe5c4]" : "text-forest"}`}>
             {ar ? "تنسيق وصيانة الحدائق" : "LANDSCAPE MAINTENANCE"}
           </span>
         )}

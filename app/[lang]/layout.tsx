@@ -67,10 +67,12 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
           <Header lang={lang} t={t} />
           <main id="main" className="flex-1">{children}</main>
           <Footer lang={lang} t={t} />
-          <Assistant lang={lang} t={t} serviceTitles={services.map((x) => x[lang].title)} />
-          <BackToTop label={t.nav.top} />
+          <aside aria-label={t.nav.quick}>
+            <Assistant lang={lang} t={t} serviceTitles={services.map((x) => x[lang].title)} />
+            <BackToTop label={t.nav.top} />
+            <WhatsAppFloat label={t.cta.whatsapp} text={t.whatsappGreeting} />
+          </aside>
           <MobileActionBar lang={lang} t={t} />
-          <WhatsAppFloat label={t.cta.whatsapp} text={t.whatsappGreeting} />
         </MotionProvider>
         <Analytics />
         {/* Animated content starts hidden; without JavaScript it must stay readable. */}

@@ -50,7 +50,7 @@ export default function Header({ lang, t }: { lang: Locale; t: Dict }) {
         className={`sticky top-0 z-40 border-b bg-cream/95 backdrop-blur transition-shadow ${scrolled ? "border-line shadow-sm" : "border-transparent"}`}>
         <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:start-4 focus:top-4 focus:z-50 focus:rounded focus:bg-white focus:px-4 focus:py-2">{t.nav.skip}</a>
         <div className={`${container} flex h-[4.25rem] items-center justify-between gap-4 sm:h-20`}>
-          <Link href={`/${lang}`} aria-label="Green Paradise"><Logo lang={lang} /></Link>
+          <Link href={`/${lang}`}><Logo lang={lang} /></Link>
 
           <nav aria-label="Main" className="hidden items-center gap-1 lg:flex">
             {links.map(([p, k]) => (

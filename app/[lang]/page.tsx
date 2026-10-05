@@ -6,9 +6,12 @@ import { getDictionary } from "@/lib/dictionary";
 import { services } from "@/data/services";
 import { projects } from "@/data/projects";
 import { galleryVideos } from "@/data/videos";
-import { photo, video } from "@/lib/media";
+import { photo } from "@/lib/media";
+import { altFor } from "@/lib/alt";
 import { btn, container } from "@/lib/ui";
-import Hero from "@/components/Hero";
+import HeroArches from "@/components/HeroArches";
+import HeroSlider from "@/components/HeroSlider";
+import { site } from "@/lib/site";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import ServiceCard from "@/components/ServiceCard";
@@ -28,8 +31,18 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
   const t = getDictionary(lang);
-  const poster = video("video-01");
   const intro = photo("palm-lawn-bougainvillea-hedge");
+  const heroPhoto = (id: string) => { const p = photo(id); return { ...p, alt: altFor(p, lang, t) }; };
+  const slides = ["white-bougainvillea-tree-villa", "turf-seating-bougainvillea", "flower-beds-villa-entrance", "palm-planters-courtyard"].map(heroPhoto);
+  const cat = t.gallery.categories as Record<string, string>;
+  const bannerSlides = [
+    ["lawn-paving-hedge", cat["lawns-and-gardens"], "50% 62%"],
+    ["pool-hedge-garden", cat["entrances-and-planters"], "50% 50%"],
+    ["lawn-flower-border", cat["flowers-and-beds"], "50% 62%"],
+    ["vertical-flower-planters", cat["flowers-and-beds"], "50% 55%"],
+    ["family-garden-lawn", cat["lawns-and-gardens"], "50% 58%"],
+  ].map(([id, caption, pos]) => ({ ...heroPhoto(id), caption, pos }));
+  const chips = ["lawns-and-turf", "plants-trees-flowers", "garden-maintenance"].map((slug) => { const sv = services.find((x) => x.slug === slug)!; return { icon: sv.icon, label: sv[lang].title }; });
 
   const faqLd = {
     "@context": "https://schema.org",
@@ -40,7 +53,9 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
   return (
     <>
       <JsonLd data={[faqLd, websiteLd(lang, t.meta.siteTitle)]} />
-      <Hero lang={lang} t={t} poster={{ src: poster.poster }} desktopVideo={video("video-01").src} mobileVideo={video("video-04").src} />
+      {site.heroStyle === "slider"
+        ? <HeroSlider lang={lang} t={t} slides={bannerSlides} />
+        : <HeroArches lang={lang} t={t} slides={slides} left={heroPhoto("bougainvillea-red-pot")} right={heroPhoto("orange-ixora-hedge")} chips={chips} />}
 
       <Marquee items={[...services.map((s) => s[lang].title), ...t.marquee]} />
 

@@ -6,7 +6,8 @@ import { photo } from "@/lib/media";
 import { Arrow, ServiceIcon } from "./icons";
 import Lift from "./Lift";
 
-export default function ServiceCard({ service, lang, label }: { service: Service; lang: Locale; label: string }) {
+export default function ServiceCard({ service, lang, label, headingLevel = 3 }: { service: Service; lang: Locale; label: string; headingLevel?: 2 | 3 }) {
+  const Heading = `h${headingLevel}` as const;
   const c = service[lang];
   const img = service.image ? photo(service.image) : null;
   return (
@@ -21,7 +22,7 @@ export default function ServiceCard({ service, lang, label }: { service: Service
       </div>
       <div className="flex flex-1 flex-col p-6">
         <span className="mb-3 flex size-10 items-center justify-center rounded-full bg-forest/10 text-forest transition-all duration-300 group-hover:rotate-[-8deg] group-hover:scale-110 group-hover:bg-forest group-hover:text-white"><ServiceIcon name={service.icon} /></span>
-        <h3 className="text-xl font-semibold">{c.title}</h3>
+        <Heading className="text-xl font-semibold">{c.title}</Heading>
         <p className="mt-2 flex-1 leading-relaxed text-ink-soft">{c.summary}</p>
         <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-forest">{label}<Arrow className="size-4 transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1" /></span>
       </div>

@@ -29,7 +29,7 @@ export default async function Projects({ params }: PageProps<"/[lang]/projects">
       <PageHero title={t.projectsPage.title} lead={t.projectsPage.lead} image="sea-view-lawn-sprinklers" />
       <section className={`${container} py-20 sm:py-24`}>
         <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((p, i) => <Reveal as="li" key={p.slug} delay={(i % 3) * 90}><ProjectCard project={p} lang={lang} t={t} /></Reveal>)}
+          {projects.map((p, i) => <Reveal as="li" key={p.slug} delay={(i % 3) * 90}><ProjectCard project={p} lang={lang} t={t} headingLevel={2} /></Reveal>)}
         </ul>
       </section>
       <CtaBand lang={lang} t={t} />

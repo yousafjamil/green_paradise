@@ -29,7 +29,7 @@ export default async function Services({ params }: PageProps<"/[lang]/services">
       <PageHero title={t.servicesPage.title} lead={t.servicesPage.lead} image="fresh-lawn-hedge" />
       <section className={`${container} py-20 sm:py-24`}>
         <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((s, i) => <Reveal as="li" key={s.slug} delay={(i % 3) * 90}><ServiceCard service={s} lang={lang} label={t.cta.details} /></Reveal>)}
+          {services.map((s, i) => <Reveal as="li" key={s.slug} delay={(i % 3) * 90}><ServiceCard service={s} lang={lang} label={t.cta.details} headingLevel={2} /></Reveal>)}
         </ul>
       </section>
       <CtaBand lang={lang} t={t} />

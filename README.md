@@ -27,6 +27,7 @@ NEXT_PUBLIC_SITE_URL=https://your-domain.ae
 | Video captions | `data/videos.ts` |
 | Quick-help assistant questions/answers, FAQ | `lib/dictionary.ts` (`assistant.topics`, `faq.items`) |
 | Colours | `app/globals.css` (`@theme`) |
+| Home hero style (`slider` or `arches`) and hero photos | `lib/site.ts` (`heroStyle`), `app/[lang]/page.tsx` |
 
 ## Media
 
@@ -61,4 +62,4 @@ Optional: `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` (analytics), `NEXT_PUBLIC_MAP_QUERY` (m
 - Real project names and locations
 - An "after" photo matching `before-bare-sandy-yard` to enable a Before/After slider
 - Confirm Arabic copy with a native reader
-- Replace the temporary email in `lib/site.ts`
+- Set a business email on the final domain in `lib/site.ts` (currently a Gmail address)
