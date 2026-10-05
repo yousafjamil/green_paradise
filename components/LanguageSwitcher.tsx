@@ -16,7 +16,7 @@ export default function LanguageSwitcher({ lang, light = false, label }: { lang:
         lang={l}
         aria-current={active ? "true" : undefined}
         className={`px-2.5 py-1 text-[0.8rem] font-semibold transition-colors ${ar ? "font-[family-name:var(--font-cairo)]" : ""} ${
-          active ? (light ? "text-white" : "text-forest") : light ? "text-white/55 hover:text-white" : "text-ink/45 hover:text-ink"
+          active ? (light ? "text-white" : "text-forest") : light ? "text-white/70 hover:text-white" : "text-ink/70 hover:text-ink"
         }`}
       >
         {text}

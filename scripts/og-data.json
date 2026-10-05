@@ -21,6 +21,13 @@
   "photo": "fresh-lawn-hedge"
  },
  {
+  "file": "en-plants",
+  "lang": "en",
+  "title": "Our plant collection",
+  "sub": "Bougainvillea, ficus, palms, flowers and more, from our nursery and projects. Ask us about availability and price.",
+  "photo": "bougainvillea-red-pot"
+ },
+ {
   "file": "en-projects",
   "lang": "en",
   "title": "Our projects",
@@ -145,6 +152,13 @@
   "title": "خدماتنا",
   "sub": "تنسيق حدائق ونباتات وصيانة للفلل والمساحات الخارجية في أبوظبي.",
   "photo": "fresh-lawn-hedge"
+ },
+ {
+  "file": "ar-plants",
+  "lang": "ar",
+  "title": "مجموعة نباتاتنا",
+  "sub": "جهنمية وفيكس ونخيل وزهور وغيرها، من مشتلنا ومشاريعنا. اسألنا عن التوفر والسعر.",
+  "photo": "bougainvillea-red-pot"
  },
  {
   "file": "ar-projects",

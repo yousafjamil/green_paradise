@@ -13,6 +13,8 @@ export const site = {
   // Set NEXT_PUBLIC_MAP_QUERY to the exact address (or "lat,lng") once confirmed; until then the map shows the city.
   mapQuery: process.env.NEXT_PUBLIC_MAP_QUERY ?? "Abu Dhabi, United Arab Emirates",
   mapZoom: process.env.NEXT_PUBLIC_MAP_QUERY ? 16 : 11,
+  // Add the client's real account URLs here; icons appear automatically once a value is set.
+  socials: { instagram: "", facebook: "", tiktok: "", youtube: "" } as Record<string, string>,
   // Home hero style: "slider" = full-width photos that change by themselves, "arches" = 3D arch photo stack.
   heroStyle: "slider" as "slider" | "arches",
 } as const;
@@ -21,3 +23,5 @@ export const whatsappUrl = (text?: string) =>
   `https://wa.me/${site.whatsapp}${text ? `?text=${encodeURIComponent(text)}` : ""}`;
 export const telUrl = `tel:${site.phone}`;
 export const mailUrl = `mailto:${site.email}`;
+
+export const socialLinks = Object.entries(site.socials).filter(([, url]) => url);

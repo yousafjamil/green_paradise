@@ -19,7 +19,12 @@ import ProjectCard from "@/components/ProjectCard";
 import VideoGrid from "@/components/VideoGrid";
 import CtaBand from "@/components/CtaBand";
 import Marquee from "@/components/Marquee";
+import PlantCard from "@/components/PlantCard";
+import { plants } from "@/data/plants";
 import Faq from "@/components/Faq";
+import Testimonials from "@/components/Testimonials";
+import ClientsStrip from "@/components/ClientsStrip";
+import AreasServed from "@/components/AreasServed";
 import JsonLd from "@/components/JsonLd";
 import { websiteLd } from "@/lib/jsonld";
 import ImageReveal from "@/components/ImageReveal";
@@ -59,6 +64,8 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
 
       <Marquee items={[...services.map((s) => s[lang].title), ...t.marquee]} />
 
+      <ClientsStrip t={t} />
+
       {/* Intro */}
       <section className={`${container} grid grid-cols-1 items-center gap-10 py-20 sm:py-28 lg:grid-cols-2 lg:gap-16`}>
         <Reveal>
@@ -91,6 +98,19 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
             ))}
           </ul>
         </div>
+      </section>
+
+      {/* Plant collection */}
+      <section className={`${container} py-20 sm:py-28`}>
+        <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+          <Reveal><SectionHeading eyebrow={t.plantsPage.eyebrow} title={t.plantsPage.teaserTitle} text={t.plantsPage.teaserText} /></Reveal>
+          <Link href={`/${lang}/plants`} className={`${btn.outlineDark} self-start`}>{t.plantsPage.viewAll}<Arrow className="size-4" /></Link>
+        </div>
+        <ul className="mt-12 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
+          {["bougainvillea-red", "ficus-shaped", "areca-palms", "petunias"].map((slug, i) => (
+            <Reveal as="li" key={slug} delay={i * 80}><PlantCard plant={(() => { const p = plants.find((x) => x.slug === slug)!; return { ...p, img: { src: photo(p.photo).src, blur: photo(p.photo).blur } }; })()} lang={lang} t={t} /></Reveal>
+          ))}
+        </ul>
       </section>
 
       {/* Featured projects */}
@@ -132,7 +152,11 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
         </ul>
       </section>
 
+      <Testimonials lang={lang} t={t} />
+
       <Faq t={t} />
+
+      <AreasServed lang={lang} t={t} />
 
       <CtaBand lang={lang} t={t} />
 

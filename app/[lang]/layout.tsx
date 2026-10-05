@@ -5,8 +5,9 @@ import "../globals.css";
 import { dirOf, hasLocale, locales } from "@/lib/i18n";
 import { getDictionary } from "@/lib/dictionary";
 import { pageMeta } from "@/lib/seo";
-import { site } from "@/lib/site";
+import { site, socialLinks } from "@/lib/site";
 import Header from "@/components/Header";
+import TopBar from "@/components/TopBar";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import MotionProvider from "@/components/MotionProvider";
@@ -56,6 +57,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
     address: { "@type": "PostalAddress", addressLocality: "Abu Dhabi", addressCountry: "AE" },
     description: t.meta.siteDescription,
     hasMap: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(site.mapQuery)}`,
+    ...(socialLinks.length ? { sameAs: socialLinks.map(([, u]) => u) } : {}),
     knowsAbout: ["Landscaping", "Garden maintenance", "Artificial turf", "Irrigation", "Plants and trees"],
   };
 
@@ -64,6 +66,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
       <body className="flex min-h-svh flex-col pb-[calc(4.25rem+env(safe-area-inset-bottom))] sm:pb-0">
         <MotionProvider>
           <ScrollProgress />
+          <TopBar t={t} />
           <Header lang={lang} t={t} />
           <main id="main" className="flex-1">{children}</main>
           <Footer lang={lang} t={t} />

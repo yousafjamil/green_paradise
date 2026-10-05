@@ -48,6 +48,19 @@ The bottom-left "Quick help" panel answers a fixed set of common questions from
 so it can only say what is written there. Edit or add topics in `assistant.topics`
 (EN and AR).
 
+## Sections that wait for real content
+
+These stay hidden until the lists are filled (nothing is invented):
+
+| Section | File |
+|---|---|
+| Customer reviews | `data/testimonials.ts` |
+| "Trusted by" client logos | `data/clients.ts` + files in `public/clients/` |
+| Areas we serve | `data/areas.ts` |
+| Social media icons | `socials` in `lib/site.ts` |
+
+The plant catalogue is in `data/plants.ts` (photos must already exist in `public/media/photos`).
+
 ## Contact form
 
 "Send Inquiry" posts to `/api/contact`, which emails the company through Resend

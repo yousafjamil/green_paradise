@@ -13,6 +13,7 @@ for (const lang of ["en", "ar"] as const) {
   add("default", t.hero.title, t.hero.eyebrow, "sea-view-lawn-sprinklers");
   add("about", t.about.title, t.about.lead, "white-bougainvillea-tree-villa");
   add("services", t.servicesPage.title, t.servicesPage.lead, "fresh-lawn-hedge");
+  add("plants", t.plantsPage.title, t.plantsPage.lead, "bougainvillea-red-pot");
   add("projects", t.projectsPage.title, t.projectsPage.lead, "villa-lawn-garden");
   add("gallery", t.gallery.title, t.gallery.text, "flower-border-lawn");
   add("contact", t.contact.title, t.contact.text, "turf-seating-bougainvillea");

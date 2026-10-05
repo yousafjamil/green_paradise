@@ -7,9 +7,10 @@ import { mailUrl, site, telUrl, whatsappUrl } from "@/lib/site";
 import Logo from "./Logo";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { Mail, Phone, Pin, WhatsApp } from "./icons";
+import SocialLinks from "./SocialLinks";
 
 export default function Footer({ lang, t }: { lang: Locale; t: Dict }) {
-  const nav = [["", t.nav.home], ["/about", t.nav.about], ["/services", t.nav.services], ["/projects", t.nav.projects], ["/gallery", t.nav.gallery], ["/contact", t.nav.contact]] as const;
+  const nav = [["", t.nav.home], ["/about", t.nav.about], ["/services", t.nav.services], ["/plants", t.nav.plants], ["/projects", t.nav.projects], ["/gallery", t.nav.gallery], ["/contact", t.nav.contact]] as const;
   const h = "mb-4 text-xs font-bold uppercase tracking-[0.18em] text-gold";
   const a = "text-white/75 transition-colors hover:text-white";
   return (
@@ -20,6 +21,7 @@ export default function Footer({ lang, t }: { lang: Locale; t: Dict }) {
           <p className="mt-5 max-w-xs text-white/70">{t.footer.blurb}</p>
           <p className="mt-3 text-sm text-white/50">{t.footer.licensed}</p>
           <div className="mt-6"><LanguageSwitcher lang={lang} light label={t.nav.language} /></div>
+          <SocialLinks className="mt-5" />
         </div>
         <nav aria-label={t.footer.explore}>
           <h2 className={h}>{t.footer.explore}</h2>
