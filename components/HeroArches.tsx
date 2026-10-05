@@ -47,7 +47,7 @@ export default function HeroArches({ lang, t, slides, left, right, chips }: Prop
 
   useEffect(() => {
     if (reduce || paused) return;
-    const id = setInterval(() => setActive((i) => (i + 1) % slides.length), 4800);
+    const id = setInterval(() => setActive((i) => (i + 1) % slides.length), 3200);
     return () => clearInterval(id);
   }, [reduce, paused, slides.length]);
 

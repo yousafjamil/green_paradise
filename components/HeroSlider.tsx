@@ -14,7 +14,7 @@ export type SlidePhoto = { src: string; width: number; height: number; blur: str
 type Props = { lang: Locale; t: Dict; slides: SlidePhoto[] };
 
 const ease = [0.2, 0.7, 0.2, 1] as const;
-const INTERVAL = 6500;
+const INTERVAL = 3500;
 
 /**
  * Full-width hero whose photos change on their own: slow cross-fade with a gentle zoom,
@@ -64,7 +64,7 @@ export default function HeroSlider({ lang, t, slides }: Props) {
         {slides.map((s, k) => (
           <motion.div key={s.src} role="group" aria-roledescription="slide" aria-label={`${k + 1} / ${N}`} aria-hidden={k !== i} initial={false}
             animate={{ opacity: k === i ? 1 : 0, scale: k === i && !reduce ? 1.08 : 1 }}
-            transition={{ opacity: { duration: 1.3, ease: "easeInOut" }, scale: { duration: k === i ? 9 : 0, delay: k === i ? 0 : 1.4, ease: "linear" } }}
+            transition={{ opacity: { duration: 0.8, ease: "easeInOut" }, scale: { duration: k === i ? INTERVAL / 1000 + 1 : 0, delay: k === i ? 0 : 1, ease: "linear" } }}
             className="absolute inset-0">
             <Image src={s.src} alt={s.alt} fill priority={k === 0} sizes="100vw" placeholder="blur" blurDataURL={s.blur} className="object-cover" style={{ objectPosition: s.pos ?? "50% 55%" }} />
           </motion.div>
